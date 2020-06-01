@@ -21,4 +21,16 @@ class Board():
         self.cards = []
 
     def add_card(self, card: Card):
+        """
+        Adds a card to the board
+        """
         self.cards.append(card)
+
+    def guess(self, word: str) -> str:
+        """
+        For a given word on any of the cards on this board, this function
+        will return the team. If the word does not exist, it will return None
+        """
+        for card in self.cards:
+            if card.word == word:
+                return card.team
